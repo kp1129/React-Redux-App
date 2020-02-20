@@ -1,4 +1,4 @@
-import {FETCH_FOX} from '../actions/foxActions';
+import {FETCH_FOX, UPDATE_IMG} from '../actions/foxActions';
 
 export const initialState = {
     fox: "",
@@ -12,6 +12,12 @@ export const foxReducer = (state = initialState, action) => {
                 ...state,
                 isFetchingFox: true
             }
+        case UPDATE_IMG:
+            return {
+                ...state,
+                fox: action.payload,
+                isFetchingFox: false
+            }    
         default:
             return state;
     }

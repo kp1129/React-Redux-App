@@ -1,0 +1,9 @@
+.fox-container {
+    height: 450px;
+    width: auto;   
+}
+
+img {
+    max-height: 100%;
+    border: 2px dashed #d35f6a;
+}

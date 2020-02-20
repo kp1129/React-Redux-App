@@ -1,17 +1,26 @@
 import React from 'react';
 import FoxForm from './components/FoxForm';
+import FoxContainer from './components/FoxContainer';
+import {connect} from 'react-redux';
 
 import './App.css';
 
-function App() {
+const App = props => {
   return (
     <div className="App">
-      <header className="App-header">
+ 
        <h1>Let's fetch some FOXES!</h1>
        <FoxForm />
-      </header>
+       {props.fox ? <FoxContainer /> : <div></div>}
+  
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    fox: state.fox
+  }
+}
+
+export default connect(mapStateToProps, {})(App);

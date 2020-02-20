@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchFox } from '../actions/foxActions';
+import './FoxForm.css';
 
 const FoxForm = props => {
 
@@ -13,7 +14,7 @@ const FoxForm = props => {
     <div>
       {props.isFetchingFox ? 
       <p>Loading...</p> : 
-      <button onClick={handleFetchFox}>Fetch Fox</button>}
+      <button className="myButton" onClick={handleFetchFox}>Fetch Fox</button>}
     </div>
   );
 };
